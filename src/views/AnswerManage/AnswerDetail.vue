@@ -3,16 +3,17 @@
     <h2>常规用户反馈收集</h2>
     <Form :showFlag="flag" @getFormData="getFormData"></Form>
     <div class="table">
-      <el-table :data="tableData" style="width: 100%">
-        <el-table-column prop="name" label="调研问卷名称"></el-table-column>
-        <el-table-column prop="sortsOne" label="一级分类"></el-table-column>
-        <el-table-column prop="sortsTow" label="二级分类"></el-table-column>
-        <el-table-column prop="createdPeopel" label="创建人"></el-table-column>
-        <el-table-column prop="createdTime" label="创建时间"></el-table-column>
-        <el-table-column prop="staff" label="员工姓名" width="180"></el-table-column>
-        <el-table-column prop="question" label="问题一"></el-table-column>
-        <el-table-column prop="answer" label="答案一"></el-table-column>
-        <el-table-column prop="operate" label="操作">
+      <el-table :data="tableData" style="width: 100%"  :border='true'>
+        <el-table-column prop="name" label="调研问卷名称"  align='center'  ></el-table-column>
+        <el-table-column prop="sortsTow" label="二级分类" align='center' ></el-table-column>
+        <el-table-column prop="createdPeopel" label="创建人" align='center'  ></el-table-column>
+        <el-table-column prop="createdTime" label="创建时间" align='center'  ></el-table-column>
+        <el-table-column prop="staff" label="员工姓名" width="180" align='center' ></el-table-column>
+        <el-table-column prop="question" label="问题一" align='center' ></el-table-column>
+        <el-table-column prop="answer" label="答案一" align='center'  ></el-table-column>
+         <el-table-column prop="question" label="问题一" align='center' ></el-table-column>
+        <el-table-column prop="answer" label="答案一" align='center' ></el-table-column>
+        <el-table-column prop="operate" label="操作" align='center'>
           <template slot-scope="socpe">
             <el-button type="text" @click="deleteDetails(socpe.row)">查看</el-button>
             <el-button type="text" @click="deleteDetails(socpe.row)">删除</el-button>
@@ -31,7 +32,7 @@ export default {
       flag: { statusFlag: false, sourceFlag: false, exportFlag: true },
       page: {
         total: 100,
-        size: 10,
+        size: 5,
         current: 1
       },
       tableData: [
@@ -93,6 +94,11 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+.el-table {
+  // margin-top: 20px;
+  border: 1px solid #ebeef5;
+  border-bottom: none;
+}
 .checkDetails {
   float: left;
   cursor: pointer;

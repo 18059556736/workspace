@@ -1,19 +1,19 @@
 <template>
-  <div>
+  <div class="main-content">
     <Form :showFlag="flag" @getFormData="getFormData"></Form>
     <div class="table">
-      <el-table :data="tableData" style="width: 100%" >
-        <el-table-column prop="name" label="调研问卷名称" ></el-table-column>
-        <el-table-column prop="sorts" label="调研分类"></el-table-column>
-        <el-table-column prop="people" label="使用人群"></el-table-column>
-        <el-table-column prop="sources" label="问卷来源"></el-table-column>
-        <el-table-column prop="keyWord" label="关键字"></el-table-column>
-        <el-table-column prop="time" label="调研期间"  width="180"></el-table-column>
-        <el-table-column prop="needNum" label="需求数量"></el-table-column>
-        <el-table-column prop="Number" label="已录入数量"></el-table-column>
-        <el-table-column prop="status" label="调研状态"></el-table-column>
-        <el-table-column prop="operate" label="操作">
-          <template slot-scope="socpe">
+      <el-table :data="tableData" style="width: 100%"  :border='true'  >
+        <el-table-column prop="name" label="调研问卷名称" align='center' ></el-table-column>
+        <el-table-column prop="sorts" label="调研分类" align='center'></el-table-column>
+        <el-table-column prop="people" label="使用人群" align='center'></el-table-column>
+        <el-table-column prop="sources" label="问卷来源" align='center'></el-table-column>
+        <el-table-column prop="keyWord" label="关键字" align='center'></el-table-column>
+        <el-table-column prop="time" label="调研期间"  width="180" align='center'></el-table-column>
+        <el-table-column prop="needNum" label="需求数量" align='center'></el-table-column>
+        <el-table-column prop="Number" label="已录入数量" align='center'></el-table-column>
+        <el-table-column prop="status" label="调研状态" align='center'></el-table-column>
+        <el-table-column prop="operate" label="操作" align='center'>
+          <template slot-scope="socpe" >
             <el-button type="text" @click="checkDetails(socpe.row)" class="checkDetails">查看</el-button>
           </template>
         </el-table-column>
@@ -29,7 +29,7 @@ export default {
       flag: { statusFlag: true, sourceFlag: true, exportFlag: false },
       page: {
         total: 100,
-        size: 10,
+        size: 5,
         current: 1
       },
       tableData: [
@@ -77,14 +77,15 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+.main-content{
+  width: 100%;
+}
 .el-table {
-  margin-top: 20px;
+  // margin-top: 20px;
   border: 1px solid #ebeef5;
   border-bottom: none;
 }
-.table-border {
-  border: 1px solid #ddd;
-}
+
 .el-table .cell {
   text-align: center !important;
   cursor: pointer;

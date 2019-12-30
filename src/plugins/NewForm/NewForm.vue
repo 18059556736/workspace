@@ -6,8 +6,8 @@
           <label for>调研问卷名称:</label>
           <input type="text" v-model="form.name" />
         </div>
-        <div class="col-md-2">
-          <label for>调研分类:</label>
+        <div class="col-md-3">
+           <label for>调研分类:</label>
           <select v-model="form.sort">
             <option v-for="item in sorts.type">{{item}}</option>
           </select>
@@ -18,7 +18,7 @@
             <option v-for="item in peoples.type">{{item}}</option>
           </select>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-2">
           <label for>调研渠道:</label>
           <select v-model="form.channel">
             <option v-for="item in channel.type">{{item}}</option>
@@ -28,11 +28,21 @@
 
       <div class="text-c row col-md-12">
         <div class="col-md-3">
+          <label for>一级产品分类:</label>
+           <select v-model="form.Onesort">
+            <option v-for="item in Onesort.type">{{item}}</option>
+          </select>
+        </div>
+        <div class="col-md-3">
+          <label for>二级产品分类:</label>
+          <input type="text" v-model="form.Towsort" />
+        </div>
+        <div class="col-md-3">
           <label for>关键字:</label>
           <input type="text" v-model="form.keyWord" />
         </div>
         <div class="col-md-2">
-           <label for>调研期间:</label>
+            <label for>调研期间:</label>
           <el-date-picker
             v-model="form.time"
             type="daterange"
@@ -40,25 +50,13 @@
             start-placeholder="开始日期"
             end-placeholder="结束日期"
             value-format="yyyy-MM-dd"
-            prefix-icon='none'
+            prefix-icon="none"
           ></el-date-picker>
-        </div>
-        <div class="col-md-3" v-show="status.default">
-          <label for>调研状态:</label>
-          <select v-model="form.status">
-            <option v-for="item in status.type">{{item}}</option>
-          </select>
-        </div>
-        <div class="col-md-3" v-show="sources.default">
-          <label for>问卷来源:</label>
-          <select v-model="form.source">
-            <option v-for="item in sources.type">{{item}}</option>
-          </select>
         </div>
       </div>
       <div class="col-md-12 buttons">
-        <el-button type="success" @click="SearchFrom()"  >搜索</el-button>
-        <el-button type="success" v-show="exportFlag" >导出</el-button>
+        <el-button type="success" @click="SearchFrom()">搜索</el-button>
+        <el-button type="success" v-show="exportFlag">导出</el-button>
       </div>
     </form>
   </div>
@@ -67,9 +65,9 @@
 export default {
   //判断是否显示的组件
   props: {
-    showFlag:{
-      type:Object,
-      default:0
+    showFlag: {
+      type: Object,
+      default: 0
     }
   },
   data() {
@@ -93,24 +91,25 @@ export default {
       channel: { type: ["8008", "SSC窗口组"] },
       status: { type: ["调研中", "已结束"], default: this.showFlag.statusFlag },
       sources: { type: [], default: this.showFlag.sourceFlag },
+      Onesort:{type:['产品','政策','流程']},
       //收集表单数据
       form: {
         name: "",
         sort: "",
         type: "",
         channel: "",
+        Onesort:'',
+        Towsort:'',
         keyWord: "",
         time: "",
-        status: "",
-        source: ""
       }
     };
   },
   methods: {
     SearchFrom() {
-    //   console.log(this.form);
-      this.$emit('getFormData',this.form)
-    },
+      //   console.log(this.form);
+      this.$emit("getNewFormData", this.form);
+    }
   }
 };
 </script>
@@ -128,7 +127,7 @@ form {
   float: left;
   margin-top: 10px;
 }
-.col-md-2{
+.col-md-2 {
   width: 31%;
   float: left;
   margin-top: 10px;
@@ -143,9 +142,9 @@ input,
 select {
   height: 31px;
   width: 50%;
-  border-radius:4px
+  border-radius: 4px;
 }
-.el-input__inner{
+.el-input__inner {
   width: 50%;
   height: 35px;
   padding: 0 10px;
@@ -156,7 +155,7 @@ select {
 .buttons {
   padding: 10px 0 0 20px;
 }
-.el-button{
-  padding: 5px 5px ;
+.el-button {
+  padding: 5px 5px;
 }
 </style>

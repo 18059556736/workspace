@@ -7,6 +7,7 @@ import 'element-ui/lib/theme-chalk/index.css'
 import MyServerHttp from '@/plugins/http.js'
 import Pagination from './plugins/pagination/index'
 import Form from './plugins/Form/index'
+import NewForm from './plugins/NewForm/index'
 // import axios from 'axios'
 // Vue.prototype.$http = axios
 //使用用户自己的插件
@@ -24,7 +25,8 @@ Vue.filter('fmtdate',(v)=>{
 import '@/assets/css/base.css'
 var HRComponentsLib = {
   Pagination,
-  Form
+  Form,
+  NewForm
 }
 Object.keys(HRComponentsLib).forEach(key => {
   HRComponentsLib[key].install(Vue)

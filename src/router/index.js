@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import NotFound from '../views/404.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -22,6 +21,7 @@ const routes = [
       {name:'answermanage',path:'/AnswerManage',component:()=>import('../views/AnswerManage/AnswerManage.vue')},
       {name:'answerdetail',path:'/AnswerDetail',component:()=>import('../views/AnswerManage/AnswerDetail.vue')},
       {name:'newquestionnaire',path:'/NewQuestionnaire',component:()=>import('../views/NewQuestionnaire/NewQuestionnaire.vue')},
+      {name:'questionnairemodel',path:'/QuestionnaireModel',component:()=>import('../views/NewQuestionnaire/QuestionnaireModel.vue')},
     ]
   },
   {
