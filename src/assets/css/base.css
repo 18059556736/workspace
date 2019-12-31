@@ -1,0 +1,357 @@
+@charset "UTF-8";
+
+/* reset begin */
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  /* overflow-y: scroll; */
+}
+
+html {
+  height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+hr,
+button,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  margin: 0;
+  padding: 0;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+audio,
+canvas,
+video {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+
+body,
+button,
+input,
+select,
+pre,
+textarea {
+  font: 14px/1.5 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', '微软雅黑', Arial, 'Helvetica', tahoma, sans-serif!important;
+  color: #3b4551;
+}
+
+/* :root {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+:root body {
+  position: absolute;
+} */
+
+body {
+  /* background-color: #f4f9ff; */
+  width: 100vw;
+  height: 100%;
+  /* overflow: hidden; */
+}
+
+textarea {
+  -ms-scrollbar-base-color: #fff;
+  -ms-scrollbar-arrow-color: #fff;
+  -ms-scrollbar-shadow-color: #fff;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 1em;
+}
+
+a {
+  text-decoration: none;
+}
+
+/*a:active { background-color: transparent; }*/
+
+small,
+cite,
+code,
+em,
+th,
+i,
+b {
+  font-size: 1em;
+  font-weight: bold;
+  font-style: normal;
+}
+
+body input,
+body select,
+body textarea,
+body button {
+  /* -webkit-box-sizing: content-box; */
+  /* -moz-box-sizing: content-box; */
+  /* box-sizing: content-box; */
+  font-size: 1em;
+  padding: 0 6px;
+  border: 1px solid #e8e8e8;
+  background-color: white;
+}
+
+button,
+input[type='button'],
+input[type='submit'] {
+  cursor: pointer;
+}
+
+input[type='file'] {
+  border: none;
+}
+
+button[disabled],
+input[disabled] {
+  cursor: not-allowed;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  padding: 0;
+  border: 0 none;
+}
+
+textarea {
+  overflow: auto;
+  vertical-align: top;
+}
+
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+td,
+th {
+  padding: 0;
+}
+
+/* fieldset, */
+img,
+iframe {
+  border: 0 none;
+}
+
+img {
+  display: inline-block;
+  vertical-align: bottom;
+  -ms-interpolation-mode: bicubic;
+}
+
+iframe {
+  display: block;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+li {
+  vertical-align: top;
+}
+
+q:before,
+q:after {
+  content: '';
+}
+
+a {
+  color: #333333;
+}
+
+a:hover {
+  color: #0054db;
+}
+
+/* reset end */
+
+button,
+input[type='button'] {
+  outline: none;
+}
+
+::-webkit-input-placeholder {
+  /* WebKit browsers */
+  color: #aaa;
+}
+
+:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: #aaa;
+}
+
+::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: #aaa;
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10+ */
+  color: #aaa;
+}
+
+/*输入框*/
+
+input[type='text']:focus,
+textarea:focus {
+  color: #2a2a2a;
+  border-color: #95c0ff;
+  outline: none;
+}
+
+/* input[type='text'][readonly] {
+    border: none;
+} */
+
+input[readonly],
+textarea[readonly] {
+  background-color: #fbfbfb;
+  cursor: context-menu;
+}
+
+input[readonly]:focus,
+textarea[readonly]:focus {
+  color: #b0b0b0;
+  border-color: #e8e8e8;
+  /* border: none; */
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+.flex-align-center {
+  display: -webkit-box;
+  -webkit-box-align: center;
+  display: -ms-flexbox;
+  -ms-flex-align: center;
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+
+.flex-v {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  display: -ms-flexbox;
+  -ms-flex-direction: column;
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-1 {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.alignRight {
+  text-align: right;
+}
+
+.noMargin {
+  margin: 0 !important;
+}
+
+/* color */
+
+.grayness {
+  color: #8492a6;
+}
+
+.label-green {
+  color: #79c04a;
+}
+
+.label-bg-red {
+  background-color: #fd494a;
+}
+
+.label-bg-green {
+  background-color: #79c04a;
+}
+
+.label-bg-yellow {
+  background-color: #ff915c;
+}
+
+.label-bg-blue {
+  background-color: #0354db;
+}
+
+.label-bg-gray {
+  background-color: #97a3b3;
+}
+
+.null-tip {
+  color: #96a2b2;
+}
+
+.errtip {
+  color: red;
+}
